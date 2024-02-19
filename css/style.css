@@ -1,0 +1,570 @@
+h1,h2,h3,h4,h5,h6{
+    font-family: "Montserrat", sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+.for-shadow span{
+    text-shadow: 5px 3px  rgb(226, 225, 225);
+    position: relative;
+}
+.for-shadow span::after{
+    content: "";
+    width: 100%;
+    color: #1c1c1c;
+    border-bottom: 1px dotted rgb(165, 163, 163);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.fa-magnifying-glass-plus{
+    cursor:pointer;
+
+}
+header {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/bg.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.nav-item a {
+    color: white;
+    margin-left: 15px;
+}
+.text-brand{
+    color: white;
+}
+
+.nav-item a:hover,
+.nav-item a:focus {
+    color: unset;
+}
+
+.underline-hover::after{
+    content: "";
+    height: 3px;
+    width: 0%;
+    background-color: white;
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    transition: 0.5s;
+}
+.underline-hover.active::after{
+    content: "";
+    height: 3px;
+    width: 90%;
+    background-color: black;
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+
+body:has(.underline-hover.active) .nav-item a,body:has(.underline-hover.active) .text-brand{
+    color: black;
+}
+body:has(.underline-hover.active) #nav-spy{
+    background-color: white;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+}
+
+
+
+.underline-hover:hover::after{
+    width: 90%;
+}
+
+.home-cap h1{
+    font-size: 50px;
+    font-weight: 800;
+}
+.home-cap p{
+    font-size: 70px;
+    font-weight: 100;
+}
+
+.home-cap p::after{
+    content: "|";
+    animation: typeing 10s infinite  ;
+}
+
+.social-media{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: 0.5s;
+}
+.social-media:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+/* .dotted img{
+    position: relative;
+} */
+
+.dotted::after{
+    content: "";
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-25px,25px);
+    background-image: url(../img/dots.png);
+    background-repeat: repeat;
+    z-index: -1;
+}
+
+.about-btn{
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 5px;
+    border: 1px solid #1c1c1c;
+}
+.ab-btn1{
+    background-color:rgb(33, 37, 41);
+    color:white;
+}
+
+.ab-btn1:hover{
+    background-color: white;
+    color:rgb(33, 37, 41);
+}
+.ab-btn2{
+    background-color: white;
+    color:rgb(33, 37, 41);
+}
+
+.ab-btn2:hover{
+    background-color:rgb(33, 37, 41);
+    color:white;
+}
+.services{
+    background-color: #f7f7f7;
+}
+.service{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px gray;
+}
+
+.service h6{
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.service figure{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #f7f7f7;
+    transition: 0.5s;
+}
+.service:hover figure{
+    background-color:black;
+    color:white;
+}
+
+.work-layer {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition:all 0.5s;
+    transform: translateY(5px);
+}
+
+
+.work-layer h6{
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 0.5s 0.2s;
+}
+.work-layer .work-icn{
+    opacity:0;
+    transform: translateY(10px);
+    transition: 0.5s 0.2s;
+}
+.work:hover .work-layer h6,.work:hover .work-layer .work-icn {
+    opacity: 1;
+    transform: translateY(0);
+}
+.work-layer:hover{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.btn-carousel{
+    position: absolute;
+    top: 0;
+    right: 15%;
+    cursor: pointer;
+}
+
+
+.work-tabs{
+    color: black;
+}
+.work-tab.active{
+    position: relative;
+}
+
+.work-tab.active::after{
+    content: "";
+    background-color: black;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.fade{
+    transition: all 0.2s linear !important;
+}
+
+.testmonial-img{
+    width: 150px;
+    height: 150px;
+}
+.carousel-item{
+    transition: transform .6s ease-in-out;
+}
+.carousel-indicators [data-bs-target]{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 0;
+    transition: opacity .6s ease !important;
+    background-color: #d6d6d6;
+}
+
+.testmonials{
+    background-color: #f7f7f7;
+}
+
+.our-team{
+    background-color: #f7f7f7;
+}
+.our-team figure img{
+    transition: 0.5s;
+}
+.our-team figure{
+    overflow:hidden;
+}
+.for-scale:hover img ,.for-scale:hover .layer-team {
+    transform: scale(1.1);
+}
+.layer-team{
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition:all 1s;
+    transform: rotate(0)  scale(0.5);
+}
+.for-scale:hover .layer-team{
+    transform: rotateY(360deg)  scale(1);
+    opacity: 1;
+}
+
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    cursor: pointer;
+}
+.contact-info figure{
+    width:70px;
+    height:70px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background-color: #f7f7f7;
+    transition: all 0.8s;
+}
+.contact-info:hover figure{
+    background-color: black;
+    color: white;
+}
+
+form input , form textarea{
+    background-color: #f7f7f7;
+    border: 0;
+}
+
+.contact-submit{
+    border: 0;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    padding: 10px 35px;
+    transition: 0.6s;
+}
+.contact-submit:hover{
+    background-color: white;
+    color: black;
+}
+footer{
+    background-color: #1c1c1c;
+    color: #748182;
+}
+
+
+@media screen and (max-width:992px) {
+    .navbar ul{
+        background-color: white;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .navbar ul li a{
+        color: black;
+    }
+    .navbar ul li a:hover{
+        color: black;
+    }
+}
+@media screen and (max-width:600px) {
+    .home-cap h1{
+        font-size: 20px;
+        font-weight: 800;
+    }
+    .home-cap p{
+        font-size: 20px;
+        font-weight: 100;
+    }
+}
+
+
+
+
+@keyframes typeing {
+    1.7%{
+        content: "L|";
+    }
+    3.4%{
+        content: "La|";
+    }
+    5.1%{
+        content: "Lar|";
+    }
+    6.8%{
+        content: "Larr|";
+    }
+    8.5%{
+        content: "Larry|";
+    }
+    10.2%{
+        content: "Larry D|";
+    }
+ 
+    11.9%{
+        content: "Larry Da|";
+    }
+ 
+    13.6%{
+        content: "Larry Dan|";
+    }
+ 
+    15.3%{
+        content: "Larry Dani|";
+    }
+ 
+    17%{
+        content: "Larry Danie|";
+    }
+ 
+    18.7%{
+        content: "Larry Daniel|";
+    }
+ 
+    20.4%{
+        content: "Larry Daniels|";
+    }
+    22.1%{
+        content: "Larry Daniel|";
+    }
+    23.8%{
+        content: "Larry Danie|";
+    }
+    25.5%{
+        content: "Larry Dani|";
+    }
+    27.2%{
+        content: "Larry Dan|";
+    }
+    28.9%{
+        content: "Larry Da|";
+    }
+    30.6%{
+        content: "Larry D|";
+    }
+    32.3%{
+        content: "Larr |";
+    }
+ 
+    34%{
+        content: "Lar |";
+    }
+ 
+    35.7%{
+        content: "La |";
+    }
+ 
+    37.4%{
+        content: "L |";
+    }
+ 
+    39.1%{
+        content: " |";
+    }
+    40.8%{
+        content: "D |";
+    }
+    42.5%{
+        content: "De |";
+    }
+    44.2%{
+        content: "Dev |";
+    }
+    45.9%{
+        content: "Deve |";
+    }
+    47.6%{
+        content: "Devel |";
+    }
+    49.3%{
+        content: "Develo |";
+    }
+    51%{
+        content: "Develop |";
+    }
+    52.7%{
+        content: "Develope |";
+    }
+    54.4%{
+        content: "Developer |";
+    }
+    56.1%{
+        content: "Develope |";
+    }
+    57.8%{
+        content: "Develop |";
+    }
+    59.5%{
+        content: "Develo |";
+    }
+    61.2%{
+        content: "Devel |";
+    }
+    62.9%{
+        content: "Deve |";
+    }
+    64.6%{
+        content: "Dev |";
+    }
+    66.3%{
+        content: "De |";
+    }
+    68%{
+        content: "D |";
+    }
+    69.7%{
+        content: "D |";
+    }
+    71.4%{
+        content: "De |";
+    }
+    73.1%{
+        content: "Des |";
+    }
+    74.8%{
+        content: "Desi |";
+    }
+    76.5%{
+        content: "Desig |";
+    }
+    78.2%{
+        content: "Design |";
+    }
+    79.9%{
+        content: "Designe |";
+    }
+    81.6%{
+        content: "Designer |";
+    }
+    83.3%{
+        content: "Designe |";
+    }
+    85%{
+        content: "Design |";
+    }
+    86.7%{
+        content: "Desig |";
+    }
+    69.7%{
+        content: "Desi |";
+    }
+    69.7%{
+        content: "Des |";
+    }
+    88.4%{
+        content: "De |";
+    }
+    90.1%{
+        content: "D |";
+    }
+    91.8%{
+        content: "B |";
+    }   
+    91.8%{
+        content: "Ba |";
+    }   
+    93.5%{
+        content: "Bad |";
+    }   
+    95.2%{
+        content: "Badr |";
+    }   
+    96.9%{
+        content: "Bad |";
+    }   
+    98.6%{
+        content: "Ba |";
+    }   
+    99.2%{
+        content: "B |";
+    }   
+    100%{
+        content: " |";
+    }    
+}
+
+
+
+
